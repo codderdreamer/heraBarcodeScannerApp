@@ -8,6 +8,7 @@ block_cipher = None
 # Gerekli paketlerin alt modüllerini topla
 hidden_pynput = collect_submodules("pynput")
 hidden_requests = collect_submodules("requests")
+hidden_serial = collect_submodules("serial")
 
 a = Analysis(
     ['main.py'],
@@ -23,7 +24,7 @@ a = Analysis(
         'datetime',
         'threading',
         'time',
-    ] + hidden_pynput + hidden_requests,
+    ] + hidden_pynput + hidden_requests + hidden_serial,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
